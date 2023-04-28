@@ -1,0 +1,8 @@
+[controllers]
+controller ansible_host=10.84.0.10 ansible_user=abra ansible_ssh_pass=qwerty12345
+[workers]
+node1 ansible_host=10.84.0.6 ansible_user=abra ansible_ssh_pass=qwerty12345
+node2 ansible_host=10.84.0.7 ansible_user=abra ansible_ssh_pass=qwerty12345
+node3 ansible_host=10.84.0.8 ansible_user=abra ansible_ssh_pass=qwerty12345
+node4 ansible_host=10.84.0.11 ansible_user=abra ansible_ssh_pass=qwerty12345
+node5 ansible_host=10.84.0.12 ansible_user=abra ansible_ssh_pass=qwerty12345

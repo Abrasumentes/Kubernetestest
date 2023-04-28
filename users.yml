@@ -1,0 +1,18 @@
+- hosts: 'controllers, workers'
+  become: yes
+   
+  tasks:
+    - name: Kube User account creation
+      user: name=kube append=yes state=present createhome=yes shell=/bin/bash
+
+    - name: Allowing sudo on Kube
+      lineinfile:
+        dest: /etc/sudoers
+        line: 'kube ALL=(ALL) NOPASSWD: ALL'
+        validate: 'visudo -cf %s'
+
+
+    - name: Authorized keys for the user
+      authorized_key: user=kube key="{{item}}"
+      with_file:
+        - ~/.ssh/known_hosts
